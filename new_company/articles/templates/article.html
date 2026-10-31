@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body class="article">
+    <div class="header">
+        <img src="{% static 'image.png' %}" alt="Django public blog">
+        <a href="{% url 'archive' %}" class="all-posts-link">Все статьи</a>
+    </div>
+    <h1>Маршрут</h1>
+    <div class="archive">
+        <div class="one-post">
+            <h2 class="post-title">{{ post.title }}</h2>
+            <div class="article-info">
+                <div class="article-author">{{ post.author.username }}</div>
+                <div class="article-created-date">{{ post.created_date }}</div>
+            </div>
+            <!-- Полный текст перевозки -->
+            <p class="article-text">{{ post.text }}</p>
+        </div>
+    </div>
+</body>
+</html>

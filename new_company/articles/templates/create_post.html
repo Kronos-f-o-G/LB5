@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Новая перевозка</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <style>
+        /* Немного стилей для формы, чтобы было красиво */
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: Tahoma, Arial, sans-serif;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-container textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .form-container input[type="submit"] {
+            background: #ffffff;
+            color: #1abc9c;
+            border: none;
+            padding: 10px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"]:hover {
+            background: #e0e0e0;
+        }
+        .error-message {
+            color: #ffcccc;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="archive">
+    <div class="header">
+        <h1>Новая перевозка</h1>
+    </div>
+
+    <div class="form-container">
+        <!-- Вывод ошибок, если они есть -->
+        {% if form.errors %}
+            <p class="error-message">{{ form.errors }}</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Название маршрута" value="{{ form.title|default:'' }}">
+            <textarea name="text" placeholder="Детали перевозки">{{ form.text|default:'' }}</textarea>
+            <input type="submit" value="Сохранить">
+        </form>
+        <p style="text-align: center; margin-top: 20px;">
+            <a href="{% url 'archive' %}" style="color: white;">← Вернуться на главную</a>
+        </p>
+    </div>
+</body>
+</html>

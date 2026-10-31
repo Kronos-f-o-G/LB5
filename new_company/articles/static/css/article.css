@@ -1,0 +1,100 @@
+/* Общие стили для всех страниц */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Общие стили для контейнера с контентом */
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ АРХИВА (СПИСОК) --- */
+.archive .header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.archive .header img {
+    display: block;
+    width: 318px; /* Ширина логотипа из методички */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.one-post {
+    margin-bottom: 30px;
+}
+
+.post-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+/* Убираем синий цвет и подчеркивание у ссылок-заголовков */
+.post-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+/* Выравнивание автора и даты */
+.article-info {
+    display: flex;
+    justify-content: space-between; /* Автор слева, дата справа */
+    font-size: 14px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.article-text {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ ОДНОЙ СТАТЬИ (ARTICLE) --- */
+.article .header {
+    display: flex;
+    justify-content: space-between; /* Логотип слева, ссылка справа */
+    align-items: center;
+    margin-bottom: 40px;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article .header img {
+    width: 318px;
+}
+.article h1 {
+
+     text-align: center;
+}
+
+/* Ссылка "Все статьи" */
+.all-posts-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.all-posts-link:hover {
+    color: #e0e0e0;
+    border-bottom-color: #e0e0e0;
+}
+
+/* Заголовок на странице одной статьи делаем больше */
+.article .post-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
